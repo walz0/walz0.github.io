@@ -1,6 +1,5 @@
 //Global Variables
 var axes = {}; //X and Y axes
-var time = 0; //Time delta
 var scope = { //Scope of variables within functions
   x: 0,
   t: 0
@@ -9,6 +8,8 @@ var tree;
 var expr; //Default Expression
 var color = "rgb(139, 233, 253)"; //Default color
 var levelOfDetail = 7;
+var drawTickMarks = true;
+var time = 0; //Time delta
 
 var canvas = document.getElementById("canvas");
 
@@ -145,5 +146,32 @@ function showAxes(ctx, axes) {
   ctx.moveTo(x0, 0);
   ctx.lineTo(x0, h);  // Y axis
 
+  if(drawTickMarks)
+  {
+    var tickLength = 5 / (100 / axes.scale);
+
+    //Unit markers
+    for(var i = 1; i < w; i++) // X axis
+    {
+      //Right
+      ctx.moveTo(x0 + i * axes.scale, y0 + tickLength);
+      ctx.lineTo(x0 + i * axes.scale, y0 - tickLength); 
+      //Left
+      ctx.moveTo(x0 - i * axes.scale, y0 + tickLength);
+      ctx.lineTo(x0 - i * axes.scale, y0 - tickLength); 
+    }
+
+    //Unit markers
+    for(var i = 1; i < w; i++) // X axis
+    {
+      //Right
+      ctx.moveTo(x0 - tickLength, y0 + i * axes.scale);
+      ctx.lineTo(x0 + tickLength, y0 + i * axes.scale); 
+      //Left
+      ctx.moveTo(x0 - tickLength, y0 - i * axes.scale);
+      ctx.lineTo(x0 + tickLength, y0 - i * axes.scale); 
+    }
+  }
+  
   ctx.stroke();
 }
