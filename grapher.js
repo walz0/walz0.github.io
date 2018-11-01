@@ -7,7 +7,7 @@ var scope = { //Scope of variables within functions
 var tree;
 var expr; //Default Expression
 var color = "rgb(139, 233, 253)"; //Default color
-var levelOfDetail = 7;
+var levelOfDetail = 10;
 var drawTickMarks = true;
 var time = 0; //Time delta
 
@@ -29,11 +29,12 @@ function startPan() {
 }
 
 function mouseDelta(event) {
+  canvas = document.getElementById("canvas");
   mousePos.x = event.clientX;
   mousePos.y = event.clientY;
   if(panning) {
-    originOffset.x = mousePos.x - 960;
-    originOffset.y = mousePos.y - 490;
+    originOffset.x = mousePos.x - (canvas.width / 2);
+    originOffset.y = mousePos.y - (canvas.height / 2) - 50;
   }
 }
 
@@ -83,7 +84,7 @@ function draw() {
   axes.x0 = originOffset.x + .5 * canvas.width;  // x0 pixels from left to x=0
   axes.y0 = originOffset.y + .5 * canvas.height; // y0 pixels from top to y=0
 
-  document.getElementById("xText").value = document.getElementById("xSlider").value;
+  //document.getElementById("xText").value = document.getElementById("xSlider").value;
 
   showAxes(ctx, axes);
   plot(ctx, axes, expr, color, 2);
