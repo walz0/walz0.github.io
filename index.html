@@ -46,6 +46,10 @@
       <input id="yText" class="input" value="0" maxlength="15" size="2" style="font-size: 20px" onkeyup="draw()">
     </div>
 
+    <div class="xRange">
+      <input id="xSlider" type="range" step="0.005" min="-25" max="25" value="0" class="slider">
+    </div>
+    
     <div id="derivativeInfo">
       <div class="derivativeFunction">
         <p class="default" style="display:inline">df(x)/dx: </p>
@@ -67,6 +71,6 @@
     <input type="color" id="colorPicker" onchange="updateColor()" value="#33ccff" style="width:3.35%; position: absolute; top: 110px; right: 25px">
       
     <!-- The math expression will be plotted on this Canvas. -->
-    <center><canvas id="canvas" style="display: inline-block;"></canvas></center>
+    <center><canvas id="canvas" style="display: inline-block;" onmousedown="startPan(event)" onmousemove="mouseDelta(event)" onmouseup="endPan(event)"></canvas></center>
   </body>
 </html>

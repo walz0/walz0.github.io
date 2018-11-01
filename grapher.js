@@ -11,7 +11,35 @@ var levelOfDetail = 7;
 var drawTickMarks = true;
 var time = 0; //Time delta
 
-var canvas = document.getElementById("canvas");
+var panning = false;
+var scrubbing = false;
+
+var mousePos = {
+  x: 0,
+  y: 0
+}
+
+var originOffset = {
+  x: 0,
+  y: 0
+}
+
+function startPan() {
+  panning = true;
+}
+
+function mouseDelta(event) {
+  mousePos.x = event.clientX;
+  mousePos.y = event.clientY;
+  if(panning) {
+    originOffset.x = mousePos.x - 960;
+    originOffset.y = mousePos.y - 490;
+  }
+}
+
+function endPan() {
+  panning = false;
+}
 
 //Calling the timedInterval function 60 frames per second
 var interval = setInterval(timedInterval, 16.7);
@@ -52,8 +80,10 @@ function draw() {
 
   var ctx = canvas.getContext("2d");
   axes.scale = document.getElementById("scale").value;
-  axes.x0 = 0.5 + .5 * canvas.width;  // x0 pixels from left to x=0
-  axes.y0 = 0.5 + .5 * canvas.height; // y0 pixels from top to y=0
+  axes.x0 = originOffset.x + .5 * canvas.width;  // x0 pixels from left to x=0
+  axes.y0 = originOffset.y + .5 * canvas.height; // y0 pixels from top to y=0
+
+  document.getElementById("xText").value = document.getElementById("xSlider").value;
 
   showAxes(ctx, axes);
   plot(ctx, axes, expr, color, 2);

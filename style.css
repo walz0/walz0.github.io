@@ -27,6 +27,44 @@
     background-color: rgb(40, 42, 54);
   }
 
+  .xRange {
+    position: absolute; 
+    right: 60px; 
+    top: 195px;
+    z-index: 1;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 125%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: rgb(16, 146, 197);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: rgb(16, 146, 197);
+    cursor: pointer;
+}
+
   .inputDiv {
     position: absolute; 
     z-index: 1; 
@@ -61,21 +99,21 @@
     position: absolute; 
     z-index: 1; 
     right: 25px; 
-    top: 195px; 
+    top: 235px; 
   }
 
   .m {
     position: absolute; 
     z-index: 1; 
     right: 25px; 
-    top: 240px; 
+    top: 275px; 
   }
 
   .tanLine {
     position: absolute; 
     z-index: 1; 
     right: 25px; 
-    top: 285px; 
+    top: 325px; 
   }
 
   .button {
