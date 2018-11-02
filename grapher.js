@@ -113,40 +113,112 @@ function draw() {
     
     document.getElementById("tanLine").value = tangentLine;
     
-    plot(ctx, axes, tangentLine, "rgb(241, 121, 198)", 2); //Tangent line to curve at point x
-    //plot(ctx, axes, math.derivative(expr, "x").toString(), "rgb(241, 121, 198)", 2); //General Derivative Function
+    plot(ctx, axes, dydx, "rgb(241, 121, 198)", 2); //Tangent line to curve at point x
+    plot(ctx, axes, tangentLine, "#FF8000", 2);
+    //plotCurve(ctx, axes, math.derivative(expr, "x").toString(), "rgb(241, 121, 198)", 2); //General Derivative Function
   }
 }
 
-function plot (ctx, axes, expr, color, thickness) {
-  var xx, //The current 'x' value that is being plotted
-  yy, //The current 'y' value that is being plotted
-  dx = levelOfDetail, //The distance 'x' between each point that is plotted
-  x0 = axes.x0, //The 'x' value of the origin
-  y0 = axes.y0, //The 'y' value of the origin
-  scale = axes.scale; //The scale of the viewport
+function pointSlope(m, x, y)
+{
+  var result = (-x * m) + y;
+  return result;
+}
 
-  //The range of x values of which to loop through
-  var iMax = Math.round((ctx.canvas.width - x0) / dx);
-  var iMin = Math.round(-x0 / dx);
+function plotVector(ctx, axes, expr, color, thickness)
+{
+  var vector = {
+    x: 0,
+    y: 0
+  };
 
+  //Parsing Input and Evaluting Components
+  vector.x = math.eval(
+    expr.substring(expr.indexOf("[") + 1, expr.indexOf(","))
+  );
+  vector.y = math.eval(
+    expr.substring(expr.indexOf(",") + 1, expr.indexOf("]"))
+  );
+  
   ctx.beginPath();
   ctx.lineWidth = thickness;
   ctx.strokeStyle = color;
 
-  //Plotting and evaluating the function at each point x
-  for (var i = iMin; i <= iMax; i++) {
-    xx = dx * i;
-    yy = scale * evaluateMathExpr(expr, xx / scale);
+  //Plotting the Vector
+  ctx.moveTo(axes.x0, axes.y0); //Move to starting point
 
-    if (i == iMin) {
-      ctx.moveTo(x0 + xx, y0 - yy);
-    }
-    else {
-      ctx.lineTo(x0 + xx, y0 - yy);
-    }
-  }
+  //Drawing line to head of Vector
+  ctx.lineTo(
+    axes.x0 + vector.x * axes.scale, 
+    axes.y0 + vector.y * -axes.scale
+  ); 
+
+  //Creating a 'slope' for the Vector
+  var m = vector.y / vector.x; 
+  //Moving to a point 0.2 units down the hypotenuse
+  var headBaseX = vector.x - 0.2;
+  var headBaseY = m * headBaseX;
+  var offset = 0.05;
+
+  var mPerp = -1 * vector.x / vector.y;
+  
+  /*//Drawing Arrow head
+  ctx.moveTo(
+    axes.x0 + (headBaseX - offset) * axes.scale, 
+    axes.y0 + ((mPerp * (headBaseX - offset)) + pointSlope(mPerp, headBaseX, headBaseY)) * -axes.scale
+  ); //Left
+  ctx.lineTo(
+    axes.x0 + vector.x * axes.scale, 
+    axes.y0 + vector.y * -axes.scale
+  ); 
+
+  ctx.moveTo(
+    axes.x0 + (headBaseX + 0.1) * axes.scale, 
+    axes.y0 + ((mPerp * (headBaseX + offset)) + pointSlope(mPerp, headBaseX, headBaseY)) * -axes.scale
+  ); //Right
+  ctx.lineTo(
+    axes.x0 + vector.x * axes.scale, 
+    axes.y0 + vector.y * -axes.scale
+  ); */
+
   ctx.stroke();
+}
+
+function plot (ctx, axes, expr, color, thickness) {
+  //Vector
+  if(expr.includes("[")) {
+    plotVector(ctx, axes, expr, color, 2);
+  }
+  else { //Function
+    var xx, //The current 'x' value that is being plotted
+    yy, //The current 'y' value that is being plotted
+    dx = levelOfDetail, //The distance 'x' between each point that is plotted
+    x0 = axes.x0, //The 'x' value of the origin
+    y0 = axes.y0, //The 'y' value of the origin
+    scale = axes.scale; //The scale of the viewport
+  
+    //The range of x values of which to loop through
+    var iMax = Math.round((ctx.canvas.width - x0) / dx);
+    var iMin = Math.round(-x0 / dx);
+  
+    ctx.beginPath();
+    ctx.lineWidth = thickness;
+    ctx.strokeStyle = color;
+  
+    //Plotting and evaluating the function at each point x
+    for (var i = iMin; i <= iMax; i++) {
+      xx = dx * i;
+      yy = scale * evaluateMathExpr(expr, xx / scale);
+  
+      if (i == iMin) {
+        ctx.moveTo(x0 + xx, y0 - yy);
+      }
+      else {
+        ctx.lineTo(x0 + xx, y0 - yy);
+      }
+    }
+    ctx.stroke();
+  }
 }
 
 function evaluateMathExpr(expr, mathX) {
