@@ -137,17 +137,36 @@ function plotVector(ctx, axes, expr, color, thickness)
   };
 
   //Parsing Input and Evaluting Components
-  vector.x = math.eval(
-    expr.substring(expr.indexOf("[") + 1, expr.indexOf(","))
+  vector.x = evaluateMathExpr(
+    expr.substring(expr.indexOf("[") + 1, expr.indexOf(",")), 3
   );
-  vector.y = math.eval(
-    expr.substring(expr.indexOf(",") + 1, expr.indexOf("]"))
+  vector.y = evaluateMathExpr(
+    expr.substring(expr.indexOf(",") + 1, expr.indexOf("]")), 3
   );
+
+  var xx, //The current 'x' value that is being plotted
+  yy, //The current 'y' value that is being plotted
+  dx = levelOfDetail, //The distance 'x' between each point that is plotted
+  scale = axes.scale; //The scale of the viewport
+  
+  //The range of x values of which to loop through
+  var iMax = Math.round((ctx.canvas.width - axes.x0) / dx);
+  var iMin = Math.round(-axes.x0 / dx);
   
   ctx.beginPath();
   ctx.lineWidth = thickness;
   ctx.strokeStyle = color;
-
+  
+  //Plotting and evaluating the function at each point x
+  for (var i = iMin; i <= iMax; i++) {
+    xx = vector.x = evaluateMathExpr(
+      expr.substring(expr.indexOf("[") + 1, expr.indexOf(",")), 3
+    );
+    yy = scale * evaluateMathExpr(
+      expr.substring(expr.indexOf(",") + 1, expr.indexOf("]")), 3
+    );
+  }
+  
   //Plotting the Vector
   ctx.moveTo(axes.x0, axes.y0); //Move to starting point
 
@@ -159,19 +178,17 @@ function plotVector(ctx, axes, expr, color, thickness)
 
   //Creating a 'slope' for the Vector
   var m = vector.y / vector.x; 
-  //Moving to a point 0.2 units down the hypotenuse
-  var mPerp = -1 * vector.x / vector.y;
   var a = 0.1/2; //Wingspan
   var c = 0.131/2; //Length of Wing
   var b = 0.15/2; //Distance from base of Arrow triangle to tip
   var h = pyth(vector.x, vector.y) - b; //Magnitude - b
   var g = pyth(a, h);
-  //RADIANS
+
   var thetaI = Math.atan(a/h); //Interior Angle
   var thetaB = Math.atan(vector.y / vector.x); //Bottom Angle
   var thetaT = Math.PI/2 - Math.atan(vector.y / vector.x); //Top Angle
-  var thetaR = thetaB - thetaI;
-  var thetaL = thetaT - thetaI;
+  var thetaR = thetaB - thetaI; //Right side Angle
+  var thetaL = thetaT - thetaI; //Left side Angle
 
   var leftBase = {
     x: g * Math.sin(thetaL),
@@ -183,23 +200,43 @@ function plotVector(ctx, axes, expr, color, thickness)
   };
   
   //Drawing Arrow head
-  ctx.moveTo(
-    axes.x0 + leftBase.x * axes.scale, 
-    axes.y0 + leftBase.y * -axes.scale
-  ); //Left
-  ctx.lineTo(
-    axes.x0 + vector.x * axes.scale, 
-    axes.y0 + vector.y * -axes.scale
-  );
-
-  ctx.moveTo(
-    axes.x0 + rightBase.x * axes.scale, 
-    axes.y0 + rightBase.y * -axes.scale
-  ); //Right
-  ctx.lineTo(
-    axes.x0 + vector.x * axes.scale, 
-    axes.y0 + vector.y * -axes.scale
-  ); 
+  if(vector.x < 0) { //NEGATIVE
+    ctx.moveTo(
+      axes.x0 + leftBase.x * axes.scale * -1, 
+      axes.y0 + leftBase.y * -axes.scale * -1
+    ); //Left
+    ctx.lineTo(
+      axes.x0 + vector.x * axes.scale, 
+      axes.y0 + vector.y * -axes.scale
+    ); 
+    ctx.moveTo(
+      axes.x0 + rightBase.x * axes.scale * -1, 
+      axes.y0 + rightBase.y * -axes.scale * -1
+    ); //Right
+    ctx.lineTo(
+      axes.x0 + vector.x * axes.scale, 
+      axes.y0 + vector.y * -axes.scale
+    ); 
+  }
+  else //POSITIVE
+  {
+    ctx.moveTo(
+      axes.x0 + leftBase.x * axes.scale, 
+      axes.y0 + leftBase.y * -axes.scale
+    ); //Left
+    ctx.lineTo(
+      axes.x0 + vector.x * axes.scale, 
+      axes.y0 + vector.y * -axes.scale
+    );
+    ctx.moveTo(
+      axes.x0 + rightBase.x * axes.scale, 
+      axes.y0 + rightBase.y * -axes.scale
+    ); //Right
+    ctx.lineTo(
+      axes.x0 + vector.x * axes.scale, 
+      axes.y0 + vector.y * -axes.scale
+    ); 
+  }
 
   ctx.stroke();
 }
