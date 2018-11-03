@@ -45,7 +45,7 @@ function endPan() {
 //Calling the timedInterval function 60 frames per second
 var interval = setInterval(timedInterval, 16.7);
 function timedInterval () {
-  time += 0.05;
+  time += 0.167;
   draw();
 }
 
@@ -167,25 +167,34 @@ function plotVector(ctx, axes, expr, color, thickness)
   var h = pyth(vector.x, vector.y) - b; //Magnitude - b
   var g = pyth(a, h);
   //RADIANS
-  var thetaI = Math.atan(a/h);
-  var thetaV = Math.atan(vector.y / vector.x);
-  var thetaE = thetaV - thetaI;
-  var baseX = g * Math.cos(thetaE);
-  var baseY = g * Math.sin(thetaE);
+  var thetaI = Math.atan(a/h); //Interior Angle
+  var thetaB = Math.atan(vector.y / vector.x); //Bottom Angle
+  var thetaT = Math.PI/2 - Math.atan(vector.y / vector.x); //Top Angle
+  var thetaR = thetaB - thetaI;
+  var thetaL = thetaT - thetaI;
+
+  var leftBase = {
+    x: g * Math.sin(thetaL),
+    y: g * Math.cos(thetaL)
+  };
+  var rightBase = {
+    x: g * Math.cos(thetaR),
+    y: g * Math.sin(thetaR)
+  };
   
   //Drawing Arrow head
-  /*ctx.moveTo(
-    axes.x0 + (headBaseX - offset) * axes.scale, 
-    axes.y0 + ((mPerp * (headBaseX - offset)) + pointSlope(mPerp, headBaseX, headBaseY)) * -axes.scale
+  ctx.moveTo(
+    axes.x0 + leftBase.x * axes.scale, 
+    axes.y0 + leftBase.y * -axes.scale
   ); //Left
   ctx.lineTo(
     axes.x0 + vector.x * axes.scale, 
     axes.y0 + vector.y * -axes.scale
-  ); */
+  );
 
   ctx.moveTo(
-    axes.x0 + baseX * axes.scale, 
-    axes.y0 + baseY * -axes.scale
+    axes.x0 + rightBase.x * axes.scale, 
+    axes.y0 + rightBase.y * -axes.scale
   ); //Right
   ctx.lineTo(
     axes.x0 + vector.x * axes.scale, 
