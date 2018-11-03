@@ -7,11 +7,7 @@ var scope = { //Scope of variables within functions
 var tree;
 var expr; //Default Expression
 var color = "rgb(139, 233, 253)"; //Default color
-<<<<<<< HEAD
 var levelOfDetail = 13;
-=======
-var levelOfDetail = 10;
->>>>>>> 82159dee56b6fe5ec1114fb58204566dca78c433
 var drawTickMarks = true;
 var time = 0; //Time delta
 
@@ -123,7 +119,6 @@ function draw() {
   }
 }
 
-<<<<<<< HEAD
 function pointSlope(m, x, y) {
   var result = (-x * m) + y;
   return result;
@@ -133,13 +128,6 @@ function pyth(x, y) {
   var result = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
   return result;
 }
-=======
-function pointSlope(m, x, y)
-{
-  var result = (-x * m) + y;
-  return result;
-}
->>>>>>> 82159dee56b6fe5ec1114fb58204566dca78c433
 
 function plotVector(ctx, axes, expr, color, thickness)
 {
@@ -162,7 +150,6 @@ function plotVector(ctx, axes, expr, color, thickness)
 
   //Plotting the Vector
   ctx.moveTo(axes.x0, axes.y0); //Move to starting point
-<<<<<<< HEAD
 
   //Drawing line to head of Vector
   ctx.lineTo(
@@ -205,43 +192,6 @@ function plotVector(ctx, axes, expr, color, thickness)
     axes.y0 + vector.y * -axes.scale
   ); 
 
-=======
-
-  //Drawing line to head of Vector
-  ctx.lineTo(
-    axes.x0 + vector.x * axes.scale, 
-    axes.y0 + vector.y * -axes.scale
-  ); 
-
-  //Creating a 'slope' for the Vector
-  var m = vector.y / vector.x; 
-  //Moving to a point 0.2 units down the hypotenuse
-  var headBaseX = vector.x - 0.2;
-  var headBaseY = m * headBaseX;
-  var offset = 0.05;
-
-  var mPerp = -1 * vector.x / vector.y;
-  
-  /*//Drawing Arrow head
-  ctx.moveTo(
-    axes.x0 + (headBaseX - offset) * axes.scale, 
-    axes.y0 + ((mPerp * (headBaseX - offset)) + pointSlope(mPerp, headBaseX, headBaseY)) * -axes.scale
-  ); //Left
-  ctx.lineTo(
-    axes.x0 + vector.x * axes.scale, 
-    axes.y0 + vector.y * -axes.scale
-  ); 
-
-  ctx.moveTo(
-    axes.x0 + (headBaseX + 0.1) * axes.scale, 
-    axes.y0 + ((mPerp * (headBaseX + offset)) + pointSlope(mPerp, headBaseX, headBaseY)) * -axes.scale
-  ); //Right
-  ctx.lineTo(
-    axes.x0 + vector.x * axes.scale, 
-    axes.y0 + vector.y * -axes.scale
-  ); */
-
->>>>>>> 82159dee56b6fe5ec1114fb58204566dca78c433
   ctx.stroke();
 }
 
