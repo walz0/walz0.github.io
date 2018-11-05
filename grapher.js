@@ -7,7 +7,7 @@ var scope = { //Scope of variables within functions
 var tree;
 var expr; //Default Expression
 var color = "rgb(139, 233, 253)"; //Default color
-var levelOfDetail = 13;
+var levelOfDetail = 10;
 var drawTickMarks = true;
 var time = 0; //Time delta
 
@@ -34,13 +34,29 @@ function mouseDelta(event) {
   mousePos.y = event.clientY;
   if(panning) {
     originOffset.x = mousePos.x - (canvas.width / 2);
-    originOffset.y = mousePos.y - (canvas.height / 2) - 50;
+    originOffset.y = mousePos.y - (canvas.height / 2);
   }
 }
 
 function endPan() {
   panning = false;
 }
+
+//----Drag and Drop----
+function allowDrop(e) {
+  e.preventDefault();
+}
+
+function drag(e) {
+  e.dataTransfer.setData("Text", e.target.id);
+}
+
+function drop(e) {
+  var data = e.dataTransfer.getData("Text");
+  e.target.appendChild(document.getElementById(data));
+  e.preventDefault();
+}
+//---------------------
 
 //Calling the timedInterval function 60 frames per second
 var interval = setInterval(timedInterval, 16.7);
@@ -52,6 +68,13 @@ function timedInterval () {
 //Update the color of the curve
 function updateColor() {
   color = document.getElementById("colorPicker").value;
+}
+
+function clearCanvas() {
+  var ctx = document.getElementById("canvas").getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  expr = '';
+  document.getElementById("input").value = "";
 }
 
 //Set an expression
@@ -76,29 +99,25 @@ function updateScale(increment) {
 function draw() {
   var canvas = document.getElementById("canvas");
   canvas.width = screen.width;
-  canvas.height = screen.height * .819;
+  canvas.height = screen.height * .855;
   if (null == canvas || !canvas.getContext) return;
 
-  var ctx = canvas.getContext("2d");
+  var ctx = canvas.getContext("2d", { alpha: true });
   axes.scale = document.getElementById("scale").value;
   axes.x0 = originOffset.x + .5 * canvas.width;  // x0 pixels from left to x=0
   axes.y0 = originOffset.y + .5 * canvas.height; // y0 pixels from top to y=0
-
-  //document.getElementById("xText").value = document.getElementById("xSlider").value;
-
+  
   showAxes(ctx, axes);
   plot(ctx, axes, expr, color, 2);
 
   var derivative = true;
   
   if(derivative)
-  {
-    var xValue = math.eval(document.getElementById("xText").value);
-    var yValue = evaluateMathExpr(expr, document.getElementById("xText").value);
-    document.getElementById("yText").value = yValue;
-    
+  { 
     var dydx = math.derivative(expr, "x").toString();
     document.getElementById("derivative").value = dydx;
+    xValue = document.getElementById("xText").value;
+    yValue = evaluateMathExpr(expr, xValue);
 
     var m = evaluateMathExpr(dydx, xValue);
     document.getElementById("m").value = m;
@@ -143,6 +162,9 @@ function plotVector(ctx, axes, expr, color, thickness)
   vector.y = evaluateMathExpr(
     expr.substring(expr.indexOf(",") + 1, expr.indexOf("]")), 3
   );
+
+  var xValue = math.eval(document.getElementById("xText").value);
+  document.getElementById("yText").value = vector.y;
 
   var xx, //The current 'x' value that is being plotted
   yy, //The current 'y' value that is being plotted
@@ -247,6 +269,10 @@ function plot (ctx, axes, expr, color, thickness) {
     plotVector(ctx, axes, expr, color, 2);
   }
   else { //Function
+    var xValue = math.eval(document.getElementById("xText").value);
+    var yValue = evaluateMathExpr(expr, document.getElementById("xText").value);
+    document.getElementById("yText").value = yValue;
+
     var xx, //The current 'x' value that is being plotted
     yy, //The current 'y' value that is being plotted
     dx = levelOfDetail, //The distance 'x' between each point that is plotted
@@ -334,4 +360,17 @@ function showAxes(ctx, axes) {
   }
   
   ctx.stroke();
+}
+
+function openFullscreen() {
+  var canvas = document.getElementById("myvideo");
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
 }
