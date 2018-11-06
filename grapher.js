@@ -99,7 +99,7 @@ function updateScale(increment) {
 function draw() {
   var canvas = document.getElementById("canvas");
   canvas.width = screen.width;
-  canvas.height = screen.height * .855;
+  canvas.height = screen.height * 1;
   if (null == canvas || !canvas.getContext) return;
 
   var ctx = canvas.getContext("2d", { alpha: true });
