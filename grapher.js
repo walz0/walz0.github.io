@@ -24,17 +24,27 @@ var originOffset = {
   y: 0
 }
 
+var oldOffset = { }
+
 function startPan() {
   panning = true;
+  oldOffset.x = originOffset.x;
+  oldOffset.y = originOffset.y;
+
+  mousePos.x = event.clientX;
+  mousePos.y = event.clientY;
 }
 
 function mouseDelta(event) {
-  canvas = document.getElementById("canvas");
-  mousePos.x = event.clientX;
-  mousePos.y = event.clientY;
+  //Mouse Delta Vector
+  var delta = {
+	  x: event.clientX - mousePos.x, 
+	  y: event.clientY - mousePos.y
+	};
+  //Panning
   if(panning) {
-    originOffset.x = mousePos.x - (canvas.width / 2);
-    originOffset.y = mousePos.y - (canvas.height / 2);
+    originOffset.x = (delta.x + oldOffset.x);
+    originOffset.y = (delta.y + oldOffset.y);
   }
 }
 
