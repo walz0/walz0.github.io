@@ -1,100 +1,25 @@
 <!DOCTYPE html>
-
-<!-- Color Palette 
-#29293D
-#2E3B64
-#2EA7D0
-#2E7A93
-#2E3A40
--->
-
-<html>
+<html lang="en-us">
   <head>
-    <meta charset=utf-8 />
-    
-    <title>Function Studio</title>
-    
-    <!-- Load dependencies. -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="grapher.js"></script>
-    <script src="math.js"></script>
-    
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | MALUM</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>  
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL Builds.json", {onProgress: UnityProgress});
+    </script>
   </head>
-  <body onload="draw()">
-    <!-- Side Bar -->
-    <div class="icon-bar" style="position: absolute; z-index: 3;">
-      <a href="https://walz0.github.io/index.html" draggable="true"><i class="fa fa-superscript"></i></a> 
-      <a href="https://walz0.github.io/index.html" draggable="true"><i class="fa fa-long-arrow-right"></i></a> 
-      <a href="https://walz0.github.io/index.html" draggable="true"><i class="fa fa-font"></i></a> 
-      <a href="https://walz0.github.io/index.html" onclick=""><i class="fa fa-edit"></i></a>
-    </div>
-
-    <!-- Settings -->
-    <div class="icon-bar" style="position: absolute; left: 0px; bottom: 20px; z-index: 3; height: 5%; background-color: #ff800000">
-        <a href=""><i class="fa fa-gear"></i></a>
-    </div> 
-
-    <!-- Clear Canvas -->
-    <div class="icon-bar" style="position: absolute; right: 0px; top: 0px; z-index: 3; height: 5%; background-color: #ff800000">
-      <a href=""><i class="fa fa-refresh"></i></a>
-    </div>
-
-    <!-- This text field will contain the math expression to plot. -->
-    <div class="inputDiv">
-        <input class="input" id="input" onkeyup="addFunction()" size="25">
-    </div>
-
-    <!-- Button to add function to the function plot queue
-    <button onclick="addFunction()" class="button">Update</button>-->
-
-    <!-- This text field will contain the scale of the viewport -->
-    <div class="scaleDiv">
-      <p class="default" style="display:inline">Scale: </p>
-      <input id="scale" class="input" value="100" maxlength="5" size="4" style="font-size: 20px" onkeyup="updateScale()">
-    </div>
-
-    <!-- X Value Input Box -->
-    <div class="xDiv">
-      <p class="default" style="display:inline">x: </p>
-      <input id="xText" class="input" value="0" maxlength="15" size="2" style="font-size: 20px" onkeyup="draw()">
-    </div>
-
-    <!-- Y Value Input Box -->
-    <div class="yDiv">
-      <p class="default" style="display:inline">y: </p>
-      <input id="yText" class="input" value="0" maxlength="15" size="2" style="font-size: 20px" onkeyup="draw()">
-    </div>
-
-    <!-- <div class="xRange">
-      <input id="xSlider" type="range" step="1" min="-25" max="25" value="0" class="slider">
-    </div>-->
-    
-    <div id="derivativeInfo">
-      <img class="default" style="width: 55px; position:absolute; right: 120px; top: 220px;" src="dydx.png">
-      <div class="derivativeFunction" style="position:absolute; top: 227px">
-        <input id="derivative" class="readonly" value="0" maxlength="15" size="6" style="font-size: 20px;" readonly>
-      </div>
-  
-      <div class="m">
-        <p class="default" style="display:inline">m: </p>
-        <input id="m" class="readonly" value="0" maxlength="15" size="6" style="font-size: 20px" readonly>
-      </div>
-  
-      <div class="tanLine">
-        <p class="default" style="display:inline">y: </p>
-        <input id="tanLine" class="readonly" value="0" maxlength="15" size="6" style="font-size: 20px" readonly>
+  <body>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">MALUM</div>
       </div>
     </div>
-
-    <div class="default" id="trademark" style="position: absolute; z-index: 4; bottom: 5%; right: 4%;">
-      Function Studio
-    </div>
-    
-    <!-- This text field will contain the scale of the viewport -->
-    <input type="color" id="colorPicker" onchange="updateColor()" value="#33ccff" style="width:3.35%; position: absolute; top: 110px; right: 25px; z-index: 4">
-      
-    <!-- The math expression will be plotted on this Canvas. -->
-    <center><canvas id="canvas" style="position:absolute; left: 0px; top: 0px" onmousedown="startPan(event)" onmousemove="mouseDelta(event)" onmouseup="endPan(event)"></canvas></center>
   </body>
 </html>
