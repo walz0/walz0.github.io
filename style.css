@@ -17,7 +17,7 @@ hr {
 
 .main-content {
     background-color: #1d1d1d; 
-    margin-left: 15%;
+    margin-left: 0;
     margin-right: 0;
     height: 100%;
     margin-bottom: auto;
@@ -81,6 +81,8 @@ a:hover {
     margin-right: auto;
     padding-right: 4em;
     padding-left: 1em;
+
+    z-index: 1;
 }
 
 #video {
@@ -127,7 +129,7 @@ a:hover {
 .video_title {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1em;
-    font-weight: bold;
+    font-weight: regular;
     color: #bebebe;
 
     min-width: 210px;
@@ -152,6 +154,7 @@ a:hover {
     display: flex;
     justify-content: center;
     position: fixed;
+    z-index: 1;
 }
 
 .logo {
@@ -176,6 +179,7 @@ a:hover {
     width: 2em;
     height: 2em;
     margin: 0.9em 0 0 0;
+    cursor: pointer;
 }
 
 #bars_icon {
@@ -207,3 +211,71 @@ a:hover {
 .social_media a:hover {
     color: #a8a8a8;
 }
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 0; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color:#262525;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 5em; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    white-space: nowrap;
+}
+  
+/* The navigation menu links */
+.sidenav a {
+    padding: 0.6em 8px 0.6em 32px;
+    text-decoration: none;
+    font-size: 1.05em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #e7e7e7;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a i {
+    font-size: 1.25em;
+    padding-right: 1em; 
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    background-color: rgb(155, 155, 155);
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#company {
+    color: #575252;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    left: 2em;
+    bottom: -24em;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .4s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+} */
+  

@@ -11,10 +11,8 @@
     <body>
         <div class="nav_bar">
             <div class="container" id="navbar">
-                <a class="bars_button" href="index.html">
-                    <i class="fa fa-bars" 
-                        id="bars_icon"> 
-                    </i>
+                <a class="bars_button" onclick="toggleNav()">
+                    <i class="fa fa-bars" id="bars_icon"></i>
                 </a>
                 
                 <img class="logo" src="img\streamsnipers.png">
@@ -45,11 +43,55 @@
                         class="fa fa-twitter-square" 
                         id="search_icon">
                     </a>
+                    <a 
+                        href="https://www.instagram.com/streamsnipersdotcom/" 
+                        target="_blank"
+                        class="fa fa-instagram" 
+                        id="search_icon">
+                    </a>
                 </div>
             </div>
         </div>
         <div class="spacer" style="padding-top: 4em"></div>
-        <div class="main-content">
+        <!-- Side Nav -->
+        <div id="mySidenav" class="sidenav">
+            <a href="#">
+                <i class="fa fa-home" style="margin-left: 0.05em"></i>
+                Home
+            </a>
+            <a href="#">
+                <i class="fa fa-film"></i>
+                <span style="margin-left: -0.1em">
+                    All Videos
+                </span>
+            </a>
+            <a href="#">
+                <i class="fa fa-question" style="margin-left: 0.25em"></i>
+                <span style="margin-left: 0.2em"></span>
+                    Random Videos
+                </span>
+            </a>
+            <a href="#">
+                <i class="fa fa-user" style="margin-left: 0.25em"></i>
+                <span style="margin-left: 0.05em"></span>
+                    Featured Streamers
+                </span>
+            </a>
+            <hr>
+            <div id="company">© 2019 1337, Inc.</div>
+            <!-- <a href="#">
+                <i class="fa fa-twitter-square" style="margin-left: 0.175em"></i>
+                Twitter
+            </a>
+            <a href="#">
+                Reddit
+            </a>
+            <a href="#">
+                Instagram
+            </a> -->
+        </div>
+
+        <div class="main-content" id="main">
             <div class="row_title">
                 Testing
             </div>
@@ -233,4 +275,29 @@
 
         </div>
     </body>
+
+    <script>
+        var navOpen = false;
+
+        function toggleNav() {
+            if(navOpen) {
+                closeNav();
+            }
+            else {
+                openNav();
+            }
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            navOpen = true;
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            navOpen = false;
+        }
+    </script>
 </html>

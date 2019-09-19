@@ -1,0 +1,166 @@
+body {
+    background-color: #262525;
+    margin:0px;
+}
+
+.break {
+    flex-basis: 100%;
+}
+
+.main-content {
+    background-color: #1d1d1d; 
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 100%;
+    margin-bottom: auto;
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0 0 2em 0;
+}
+
+.search_box {
+    min-height: 2em;
+    min-width: 10em;
+    width: 35%;
+    justify-content: left;
+    
+    /* margin-right: 21%; */
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    
+    font-size: 0.9em;
+    border: none;
+    background-color: #1d1d1d;
+    color: white;
+    text-align: left;
+    outline: none;
+
+    padding: 0.25em 0.25em 0.25em 1em;
+}
+
+.search_button {
+    background-color: #fff821;
+    border: none;   
+    color: black;
+
+    padding: 0.25em 2em 0.25em 2em;
+    margin: 1.15em 0 1.12em 0;
+}
+
+a:hover {
+    color: #a8a8a8;
+}
+
+#search_icon {
+    text-decoration: none;
+    padding: 0.275em 0 0 0;
+}
+
+.container {
+    display: inline-block;
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 4em;
+    padding-left: 1em;
+}
+
+#video {
+    border-width: 2px;
+    border-color: #262525;
+    border-style: solid;
+
+    margin: 2em 0 0 1.5em;
+    padding: 0em 0em 0.8em 0.1em;
+    background-color: rgb(10, 10, 10); 
+
+    justify-content: left;
+}
+
+.video_title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.25em;
+    color: #bebebe;
+
+    padding: 0.75em 0 0.75em 1em;
+}
+
+.video_container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    background-color: rgb(10, 10, 10); 
+}
+
+.nav_bar {
+    background-color: rgb(10, 10, 10);
+    width: 100%;
+    height: 4.5em;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 37px;
+
+    display: inline-block;
+    align-items: stretch;
+    position:relative;
+
+    padding-top: 1.25em;
+    padding-right: 2em;
+    padding-left: 0;
+
+    margin-left: 1em;
+}
+
+.bars_button {
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    width: 2em;
+    height: 2em;
+    margin: 0.9em 0 0 1%;
+}
+
+#bars_icon {
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+}
+
+.social_media {
+    overflow:hidden;
+    font-size: 2em;
+    text-decoration: none;
+    display:block;
+
+    white-space: nowrap;
+
+    padding-left: 1em;
+
+    margin-top: 0.35em;
+    margin-left: auto;
+    margin-right: -1em;
+}
+
+.social_media a {
+    color: yellow;
+    overflow: hidden;
+}
+
+.social_media a:hover {
+    color: #a8a8a8;
+}
