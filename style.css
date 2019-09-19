@@ -305,11 +305,13 @@ a:hover .video_title {
     }
 
     .video_title {
-        font-size: 1.35em;
+        font-size: 1.2em;
+        padding: 0.5em 0.5em 1em 1em;
     }
 
     .row_title {
         font-size: 1.5em;
+        flex-basis: 100%;
     }
 
     .row_title img {
@@ -317,8 +319,8 @@ a:hover .video_title {
     }
 
     .main-content {
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: -1em;
+        margin-right: -1em;
     }
 
     .logo {
