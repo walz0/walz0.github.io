@@ -17,8 +17,8 @@ hr {
 
 .main-content {
     background-color: #1d1d1d; 
-    margin-left: 75px;
-    margin-right: 0;
+    margin-left: 250px;
+    margin-right: 15%;
     height: 100%;
     margin-bottom: auto;
     margin-top: auto;
@@ -30,7 +30,7 @@ hr {
 
 .search_box {
     min-height: 2em;
-    min-width: 10em;
+    min-width: 7em;
     width: 35%;
     justify-content: left;
     
@@ -45,7 +45,7 @@ hr {
     text-align: left;
     outline: none;
 
-    padding: 0.25em 0.25em 0.25em 1em;
+    padding: 0.25em 1em 0.25em 1em;
 
     margin-left: auto;
     margin-right: 0;
@@ -58,6 +58,10 @@ hr {
 
     padding: 0.25em 2em 0.25em 2em;
     margin: 1.15em 0 1.12em 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 a:hover {
@@ -120,6 +124,8 @@ a:hover {
     font-size: 1.2em;
     color: white;
 
+    height: 2em;
+
     padding: 0 0 0 0;
     margin: 1.25em 0 0 0.5em;
 
@@ -130,11 +136,15 @@ a:hover {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1em;
     font-weight: regular;
-    color: #bebebe;
+    color: white;
 
     min-width: 210px;
 
     padding: 0.25em 0 0.75em 0.5em;
+}
+
+a:hover .video_title {
+    color: #a8a8a8;
 }
 
 .video_container {
@@ -215,7 +225,7 @@ a:hover {
 /* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
-    width: 75px; /* 0 width - change this with JavaScript */
+    width: 250px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 0; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -230,7 +240,7 @@ a:hover {
   
 /* The navigation menu links */
 .sidenav a {
-    padding: 0.6em 8px 0.6em 32px;
+    padding: 0.6em 8px 0.6em 1em;
     text-decoration: none;
     font-size: 1.05em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -246,7 +256,12 @@ a:hover {
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-    background-color: rgb(155, 155, 155);
+    background-color: rgb(68, 68, 68);
+}
+
+.active {
+    background-color: rgb(68, 68, 68);
+    font-weight: bold;
 }
 
 /* Position and style the close button (top right corner) */
@@ -275,8 +290,52 @@ a:hover {
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-/* @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-} */
-  
+@media screen and (max-width: 600px) {
+    .sidenav {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        display: none;
+        margin: 0;
+    }
+
+    #thumbnail {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .video_title {
+        font-size: 1.35em;
+    }
+
+    .row_title {
+        font-size: 1.5em;
+    }
+
+    .row_title img {
+        vertical-align: 1em;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .logo {
+        margin: 0 0 0 -0.5em;
+    }
+
+    .bars_button {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        display: none;
+    }
+
+    .social_media {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        display: none;
+    }
+}
