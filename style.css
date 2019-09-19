@@ -17,7 +17,7 @@ hr {
 
 .main-content {
     background-color: #1d1d1d; 
-    margin-left: 0;
+    margin-left: 75px;
     margin-right: 0;
     height: 100%;
     margin-bottom: auto;
@@ -215,7 +215,7 @@ a:hover {
 /* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
+    width: 75px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 0; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -225,6 +225,7 @@ a:hover {
     padding-top: 5em; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
     white-space: nowrap;
+    overflow: hidden;
 }
   
 /* The navigation menu links */
@@ -260,7 +261,7 @@ a:hover {
 #company {
     color: #575252;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    left: 2em;
+    left: 6em;
     bottom: -24em;
     position: relative;
     overflow: hidden;
