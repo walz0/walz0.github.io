@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<!--
+    Github Calendar Embed: 
+    https://stackoverflow.com/questions/34516592/embed-github-contributions-graph-in-website 
+-->
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"/>
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"/>
+
+        <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"> </script>
+        <title>
+            Aidan Walz - Home
+        </title>
+    </head>
+    <header class="navbar">
+        <div class="button-container">
+            <button class="active" href="home.html" onclick="goToPage('home.html')">
+                Home
+            </button>
+            <button href="resume.html" onclick="goToPage('resume.html')">
+                Resume
+            </button>
+        </div>
+    </header>
+    <body>
+        <main>  
+            <div class="parallax" style="color: white">
+                <div class="showcase" style="margin-left: 30vw">
+                    <div class="showcase-name">
+                        My Resume
+                    </div>
+                    <p class="showcase-desc">Click to download</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="row">
+                    <a href="resume.pdf">
+                        <img src="img/resume.jpg" style="border: solid; border-color: grey; border-width: 1px">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="row">
+                    <div class="twelve columns">
+                        <p style="font-size: 0.75em; text-align: center">
+                            I certify that the content included in this portfolio/website is my 
+                            own original work (or is cited accurately) and accurate to my knowledge.
+                            Work included which was conducted as part of a team or other group is 
+                            indicated and attributed as such the other team members are named and 
+                            a true description of my role in the project is included. Aidan Walz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </body>
+
+    <script>
+        GitHubCalendar(".calendar", "walz0", { responsive: true });
+
+        function goToPage(url) {
+            window.location.href = url;
+        }
+    </script>
+</html>

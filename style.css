@@ -1,0 +1,162 @@
+html {
+    overflow-x: hidden;   
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+.section {
+    margin-top: 1em;
+    padding: 30px;
+    height: auto;
+
+    background-color: #ffffff;
+}
+
+.section:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+
+.section .row .columns {
+    text-align: left;
+    padding: 15px;
+    
+    font-size: 1.25em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 3;
+
+    width: 105vw;
+    height: 80px;
+
+    margin: -40px 0 0 -20px;
+
+    background: #ffffff;
+
+    display: flex;
+    /* justify-content: center; */
+    
+    border: solid;
+    border-width: 7px;
+    border-color: #7bc96f;
+}
+
+.empty {
+    height: 50px;
+}
+
+.large-button {
+    color: #7bc96f;
+    border: solid;
+    border-width: 3px;
+
+    display: flex;
+
+    justify-content: center;
+
+    width: 10vw;
+    padding: 15px 15px 15px 15px;
+    margin: 40px auto 15px auto;
+}
+
+.large-button svg {
+    fill: #7bc96f;
+    margin-top: 10px;
+    margin-right: 5px;
+    height: 25px;
+}
+
+.large-button:hover {
+    background-color: #7bc96f;
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition: 0.15s;
+}
+
+.large-button:hover svg {
+    fill: #ffffff;
+}
+
+.showcase {
+    width: 20vw;
+    min-width: 300px;
+    z-index: 0;
+}
+
+.showcase-name {
+    margin-top: 110px;
+    margin-left: -15px;
+
+    text-align: left;
+    padding-left: 15px;
+    width: auto;
+
+    font-size: 4em;
+    font-weight: lighter;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-color: #7bc96f;
+}
+
+.showcase-desc {
+    font-size: 2em;
+    font-weight: lighter;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #58914f;
+    padding-left: 10px;
+    margin-left: 70px;
+    width: auto;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.button-container {
+    margin: 19px 28vw 0 auto;
+}
+
+.active {
+    background-color: #7bc96f;
+    color: #ffffff;
+}
+
+
+button {
+    background-color: #ffffff;
+    font-weight: normal;
+    border-radius: 0;
+    border: none;
+
+    margin: 5px;
+
+    font-size: 1.25em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button:hover {
+    color: #7bc96f;
+}
+
+.parallax {
+  background-image: url("img/luddy.jpg");
+
+  min-height: 500px; 
+  width: 120vw;
+  margin: 30px 0 0 -20px;
+  overflow: hidden;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
