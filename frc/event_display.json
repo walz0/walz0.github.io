@@ -1,0 +1,800 @@
+{
+    "Week0":[
+        [
+            "2020week0",
+            "Week 0"
+        ],
+        [
+            "2020mnwcw",
+            "West Central Week 0"
+        ],
+        [
+            "2020srrc",
+            "Seven Rivers Robotics Coalition Week Zero"
+        ]
+    ],
+    "Week1":[
+        [
+            "2020caln",
+            "Los Angeles North Regional"
+        ],
+        [
+            "2020ctnct",
+            "NE District Northern CT Event"
+        ],
+        [
+            "2020gagai",
+            "PCH District Gainesville Event presented by Automation Direct"
+        ],
+        [
+            "2020isde1",
+            "ISR District Event #1"
+        ],
+        [
+            "2020isde2",
+            "ISR District Event #2"
+        ],
+        [
+            "2020miket",
+            "FIM District Kettering University Event #1"
+        ],
+        [
+            "2020mimcc",
+            "FIM District Macomb Community College Event"
+        ],
+        [
+            "2020misou",
+            "FIM District Southfield Event"
+        ],
+        [
+            "2020mitvc",
+            "FIM District Traverse City Event"
+        ],
+        [
+            "2020mokc",
+            "Greater Kansas City Regional"
+        ],
+        [
+            "2020mxmo",
+            "Regional Monterrey"
+        ],
+        [
+            "2020ncwak",
+            "FNC District Wake County Event"
+        ],
+        [
+            "2020ndgf",
+            "Great Northern Regional"
+        ],
+        [
+            "2020nhgrs",
+            "NE District Granite State Event"
+        ],
+        [
+            "2020ohmv",
+            "Miami Valley Regional"
+        ],
+        [
+            "2020onosh",
+            "ONT District Durham College Event"
+        ],
+        [
+            "2020orore",
+            "PNW District Clackamas Academy Event"
+        ],
+        [
+            "2020pahat",
+            "FMA District Hatboro-Horsham Event"
+        ],
+        [
+            "2020scmb",
+            "Palmetto Regional"
+        ],
+        [
+            "2020txdri",
+            "FIT District Dripping Springs Event"
+        ],
+        [
+            "2020txgre",
+            "FIT District Greenville Event"
+        ],
+        [
+            "2020vahay",
+            "CHS District Haymarket VA Event"
+        ],
+        [
+            "2020wasno",
+            "PNW District Glacier Peak Event"
+        ]
+    ],
+    "Week2":[
+        [
+            "2020arli",
+            "Arkansas Regional"
+        ],
+        [
+            "2020bcvi",
+            "Canadian Pacific Regional"
+        ],
+        [
+            "2020cadm",
+            "Del Mar Regional"
+        ],
+        [
+            "2020cala",
+            "Los Angeles Regional"
+        ],
+        [
+            "2020chta",
+            "***SUSPENDED*** Science Park Taichung Regional"
+        ],
+        [
+            "2020ctwat",
+            "NE District Waterbury Event"
+        ],
+        [
+            "2020gadal",
+            "PCH District Dalton Event"
+        ],
+        [
+            "2020ilch",
+            "Midwest Regional"
+        ],
+        [
+            "2020inblo",
+            "IN District Bloomington Event"
+        ],
+        [
+            "2020mabri",
+            "NE District SE Mass Event"
+        ],
+        [
+            "2020mdbet",
+            "CHS District Bethesda MD Event sponsored by Accenture"
+        ],
+        [
+            "2020mijac",
+            "FIM District Jackson Event"
+        ],
+        [
+            "2020mike2",
+            "FIM District Kettering University Event #2"
+        ],
+        [
+            "2020mikng",
+            "FIM District Kingsford Event"
+        ],
+        [
+            "2020mimil",
+            "FIM District Milford Event"
+        ],
+        [
+            "2020misjo",
+            "FIM District St. Joseph Event"
+        ],
+        [
+            "2020mndu",
+            "Lake Superior Regional"
+        ],
+        [
+            "2020mndu2",
+            "Northern Lights Regional"
+        ],
+        [
+            "2020ncpem",
+            "FNC District UNC Pembroke Event"
+        ],
+        [
+            "2020njfla",
+            "***SUSPENDED*** FMA District Mount Olive Event"
+        ],
+        [
+            "2020onbar",
+            "ONT District Georgian College Event"
+        ],
+        [
+            "2020onto3",
+            "ONT District Humber College Event"
+        ],
+        [
+            "2020qcsh",
+            "Festival de Robotique a Sherbrooke Regional"
+        ],
+        [
+            "2020tuis",
+            "Istanbul Regional"
+        ],
+        [
+            "2020txcha",
+            "FIT District Channelview Event"
+        ],
+        [
+            "2020txdel",
+            "FIT District Del Rio Event"
+        ],
+        [
+            "2020txpla",
+            "FIT District Plano Event"
+        ],
+        [
+            "2020utwv",
+            "Utah Regional"
+        ],
+        [
+            "2020vagle",
+            "CHS District Richmond VA Event sponsored by Dominion Energy"
+        ],
+        [
+            "2020waamv",
+            "***SUSPENDED*** PNW District Auburn Mountainview Event - See Site Info Document"
+        ],
+        [
+            "2020waspo",
+            "PNW District West Valley Event"
+        ]
+    ],
+    "Week3":[
+        [
+            "2020ausc",
+            "***SUSPENDED*** Southern Cross Regional"
+        ],
+        [
+            "2020azfl",
+            "***SUSPENDED*** Arizona North Regional"
+        ],
+        [
+            "2020bexi",
+            "***SUSPENDED*** Beijing Cultural Exchange Event #1"
+        ],
+        [
+            "2020cafr",
+            "***SUSPENDED*** Central Valley Regional"
+        ],
+        [
+            "2020casd",
+            "***SUSPENDED*** San Diego Regional presented by Qualcomm"
+        ],
+        [
+            "2020flor",
+            "***SUSPENDED*** Orlando Regional"
+        ],
+        [
+            "2020gacol",
+            "***SUSPENDED*** PCH District Columbus Event"
+        ],
+        [
+            "2020inmis",
+            "***SUSPENDED*** IN District St. Joseph Event"
+        ],
+        [
+            "2020isde3",
+            "***SUSPENDED*** ISR District Event #3"
+        ],
+        [
+            "2020marea",
+            "***SUSPENDED*** NE District North Shore Event"
+        ],
+        [
+            "2020mdowi",
+            "***SUSPENDED*** CHS District Owings Mills MD Event"
+        ],
+        [
+            "2020mibel",
+            "***SUSPENDED*** FIM District Belleville Event"
+        ],
+        [
+            "2020midet",
+            "***SUSPENDED*** FIM District Detroit Event"
+        ],
+        [
+            "2020miesc",
+            "***SUSPENDED*** FIM District Escanaba Event"
+        ],
+        [
+            "2020migul",
+            "***SUSPENDED*** FIM District Gull Lake Event"
+        ],
+        [
+            "2020mimus",
+            "***SUSPENDED*** FIM District Muskegon Event"
+        ],
+        [
+            "2020mosl",
+            "***SUSPENDED*** St. Louis Regional"
+        ],
+        [
+            "2020ncgre",
+            "***SUSPENDED*** FNC District ECU Event"
+        ],
+        [
+            "2020njrob",
+            "***SUSPENDED*** FMA District Robbinsville Event"
+        ],
+        [
+            "2020nyro",
+            "***SUSPENDED*** Finger Lakes Regional"
+        ],
+        [
+            "2020nytr",
+            "***SUSPENDED*** New York Tech Valley Regional"
+        ],
+        [
+            "2020okok",
+            "***SUSPENDED*** Oklahoma Regional"
+        ],
+        [
+            "2020onott",
+            "***SUSPENDED*** ONT District Carleton University Event"
+        ],
+        [
+            "2020onto1",
+            "***SUSPENDED*** ONT District Ryerson University Event"
+        ],
+        [
+            "2020orwil",
+            "***SUSPENDED*** PNW District Wilsonville Event"
+        ],
+        [
+            "2020paphi",
+            "***SUSPENDED*** FMA District Springside Chestnut Hill Academy Event"
+        ],
+        [
+            "2020tuis2",
+            "Bosphorus Regional"
+        ],
+        [
+            "2020txama",
+            "***SUSPENDED*** FIT District Amarillo Event"
+        ],
+        [
+            "2020txfor",
+            "***SUSPENDED*** FIT District Fort Worth Event"
+        ],
+        [
+            "2020txnew",
+            "***SUSPENDED*** FIT District New Braunfels Event"
+        ],
+        [
+            "2020vapor",
+            "***SUSPENDED*** CHS District Portsmouth VA Event - See Site Info Document"
+        ]
+    ],
+    "Week4":[
+        [
+            "2020ausp",
+            "***SUSPENDED*** South Pacific Regional"
+        ],
+        [
+            "2020bexi2",
+            "***SUSPENDED*** Beijing Cultural Exchange Event #2"
+        ],
+        [
+            "2020casf",
+            "***SUSPENDED*** San Francisco Regional"
+        ],
+        [
+            "2020cave",
+            "***SUSPENDED*** Ventura Regional"
+        ],
+        [
+            "2020code",
+            "***SUSPENDED*** Colorado Regional"
+        ],
+        [
+            "2020gacar",
+            "***SUSPENDED*** PCH District Carrollton Event"
+        ],
+        [
+            "2020hiho",
+            "***SUSPENDED*** Hawaii Regional"
+        ],
+        [
+            "2020ilpe",
+            "***SUSPENDED*** Central Illinois Regional"
+        ],
+        [
+            "2020incol",
+            "***SUSPENDED*** IN District Columbus Event"
+        ],
+        [
+            "2020isde4",
+            "***SUSPENDED*** ISR District Event #4"
+        ],
+        [
+            "2020ksla",
+            "***SUSPENDED*** Heartland Regional"
+        ],
+        [
+            "2020mawne",
+            "***SUSPENDED*** NE District Western NE Event"
+        ],
+        [
+            "2020mawor",
+            "***SUSPENDED*** NE District WPI Event"
+        ],
+        [
+            "2020mdedg",
+            "***SUSPENDED*** CHS District Edgewater MD Event sponsored by Leidos"
+        ],
+        [
+            "2020micen",
+            "***SUSPENDED*** FIM District Center Line Event"
+        ],
+        [
+            "2020milan",
+            "***SUSPENDED*** FIM District Lansing Event"
+        ],
+        [
+            "2020milin",
+            "***SUSPENDED*** FIM District Lincoln Event"
+        ],
+        [
+            "2020mimid",
+            "***SUSPENDED*** FIM District Midland Event"
+        ],
+        [
+            "2020miwmi",
+            "***SUSPENDED*** FIM District West Michigan Event"
+        ],
+        [
+            "2020mxto",
+            "***SUSPENDED*** Regional Laguna"
+        ],
+        [
+            "2020ncgui",
+            "***SUSPENDED*** FNC District Guilford County Event"
+        ],
+        [
+            "2020njbri",
+            "***SUSPENDED*** FMA District Bridgewater-Raritan Event"
+        ],
+        [
+            "2020njtab",
+            "***SUSPENDED*** FMA District Seneca Event"
+        ],
+        [
+            "2020nyli",
+            "***SUSPENDED*** SBPLI Long Island Regional #1"
+        ],
+        [
+            "2020nysu",
+            "***SUSPENDED*** Hudson Valley Regional"
+        ],
+        [
+            "2020nyut",
+            "***SUSPENDED*** Central New York Regional"
+        ],
+        [
+            "2020onnyo",
+            "***SUSPENDED*** ONT District York University Event"
+        ],
+        [
+            "2020onwat",
+            "***SUSPENDED*** ONT District University of Waterloo Event"
+        ],
+        [
+            "2020paca",
+            "***SUSPENDED*** Greater Pittsburgh Regional"
+        ],
+        [
+            "2020tnme",
+            "***SUSPENDED*** Memphis Regional"
+        ],
+        [
+            "2020txaus",
+            "***SUSPENDED*** FIT District Austin Event"
+        ],
+        [
+            "2020txdls",
+            "***SUSPENDED*** FIT District Dallas Event"
+        ],
+        [
+            "2020txhou",
+            "***SUSPENDED*** FIT District Houston Event"
+        ],
+        [
+            "2020vabla",
+            "***SUSPENDED*** CHS District Blacksburg VA Event"
+        ],
+        [
+            "2020wabel",
+            "***SUSPENDED*** PNW District Bellingham Event"
+        ],
+        [
+            "2020wayak",
+            "***SUSPENDED*** PNW District SunDome Event"
+        ],
+        [
+            "2020wimi",
+            "***SUSPENDED*** Wisconsin Regional"
+        ]
+    ],
+    "Week5":[
+        [
+            "2020cada",
+            "***SUSPENDED*** Sacramento Regional"
+        ],
+        [
+            "2020camb",
+            "***SUSPENDED*** Monterey Bay Regional"
+        ],
+        [
+            "2020gaalb",
+            "***SUSPENDED*** PCH District Albany Event presented by Procter & Gamble"
+        ],
+        [
+            "2020iacf",
+            "***SUSPENDED*** Iowa Regional"
+        ],
+        [
+            "2020idbo",
+            "***SUSPENDED*** Idaho Regional"
+        ],
+        [
+            "2020inpmh",
+            "***SUSPENDED*** IN District Perry Meridian Event"
+        ],
+        [
+            "2020lake",
+            "***SUSPENDED*** Bayou Regional"
+        ],
+        [
+            "2020mabos",
+            "***SUSPENDED*** NE District Greater Boston Event"
+        ],
+        [
+            "2020mialp",
+            "***SUSPENDED*** FIM District Alpena Event #1"
+        ],
+        [
+            "2020mifer",
+            "***SUSPENDED*** FIM District Ferris State Event"
+        ],
+        [
+            "2020milak",
+            "***SUSPENDED*** FIM District Lakeview Event"
+        ],
+        [
+            "2020miliv",
+            "***SUSPENDED*** FIM District Livonia Event"
+        ],
+        [
+            "2020miwoo",
+            "***SUSPENDED*** FIM District Woodhaven Event"
+        ],
+        [
+            "2020mnmi",
+            "***SUSPENDED*** Minnesota 10,000 Lakes Regional Presented by the Medtronic Foundation"
+        ],
+        [
+            "2020mnmi2",
+            "***SUSPENDED*** Minnesota North Star Regional"
+        ],
+        [
+            "2020ncash",
+            "***SUSPENDED*** FNC District UNC Asheville Event"
+        ],
+        [
+            "2020nhsnh",
+            "***SUSPENDED*** NE District Southern NH Event"
+        ],
+        [
+            "2020njski",
+            "***SUSPENDED*** FMA District Montgomery Event"
+        ],
+        [
+            "2020nvlv",
+            "***SUSPENDED*** Las Vegas Regional"
+        ],
+        [
+            "2020nyli2",
+            "***SUSPENDED*** SBPLI Long Island Regional #2"
+        ],
+        [
+            "2020ohcl",
+            "***SUSPENDED*** Buckeye Regional"
+        ],
+        [
+            "2020onnob",
+            "***SUSPENDED*** ONT District North Bay Event"
+        ],
+        [
+            "2020onwin",
+            "***SUSPENDED*** ONT District Windsor Essex Great Lakes Event"
+        ],
+        [
+            "2020orsal",
+            "***SUSPENDED*** PNW District Oregon State Fairgrounds Event"
+        ],
+        [
+            "2020paben",
+            "***SUSPENDED*** FMA District Bensalem Event"
+        ],
+        [
+            "2020tnkn",
+            "***SUSPENDED*** Smoky Mountains Regional"
+        ],
+        [
+            "2020txelp",
+            "***SUSPENDED*** FIT District El Paso Event"
+        ],
+        [
+            "2020txpas",
+            "***SUSPENDED*** FIT District Pasadena Event"
+        ],
+        [
+            "2020waahs",
+            "***SUSPENDED*** PNW District Auburn Event"
+        ]
+    ],
+    "Week6":[
+        [
+            "2020abca",
+            "***SUSPENDED*** Canadian Rockies Regional"
+        ],
+        [
+            "2020alhu",
+            "***SUSPENDED*** Rocket City Regional"
+        ],
+        [
+            "2020azpx",
+            "***SUSPENDED*** Arizona West Regional"
+        ],
+        [
+            "2020caav",
+            "***SUSPENDED*** Aerospace Valley Regional"
+        ],
+        [
+            "2020caoc",
+            "***SUSPENDED*** Orange County Regional"
+        ],
+        [
+            "2020casj",
+            "***SUSPENDED*** Silicon Valley Regional"
+        ],
+        [
+            "2020chcmp",
+            "***SUSPENDED*** FIRST Chesapeake District Championship sponsored by Newport News Shipbuilding"
+        ],
+        [
+            "2020cthar",
+            "***SUSPENDED*** NE District Hartford Event"
+        ],
+        [
+            "2020flwp",
+            "***SUSPENDED*** South Florida Regional"
+        ],
+        [
+            "2020ftcmp",
+            "***SUSPENDED*** FIRST In Texas District Championship"
+        ],
+        [
+            "2020gacmp",
+            "***SUSPENDED*** Peachtree District State Championship"
+        ],
+        [
+            "2020incmp",
+            "***SUSPENDED*** Indiana State Championship"
+        ],
+        [
+            "2020iscmp",
+            "***SUSPENDED*** FIRST Israel District Championship"
+        ],
+        [
+            "2020melew",
+            "***SUSPENDED*** NE District Pine Tree Event"
+        ],
+        [
+            "2020mial2",
+            "***SUSPENDED*** FIM District Alpena Event #2"
+        ],
+        [
+            "2020miken",
+            "***SUSPENDED*** FIM District East Kentwood Event"
+        ],
+        [
+            "2020mimar",
+            "***SUSPENDED*** FIM District Marysville Event"
+        ],
+        [
+            "2020mishe",
+            "***SUSPENDED*** FIM District Shepherd Event"
+        ],
+        [
+            "2020mitry",
+            "***SUSPENDED*** FIM District Troy Event"
+        ],
+        [
+            "2020mokc3",
+            "***SUSPENDED*** Central Missouri Regional"
+        ],
+        [
+            "2020mrcmp",
+            "***SUSPENDED*** FIRST Mid-Atlantic District Championship"
+        ],
+        [
+            "2020nccmp",
+            "***SUSPENDED*** FIRST North Carolina State Championship"
+        ],
+        [
+            "2020nyny",
+            "***SUSPENDED*** New York City Regional"
+        ],
+        [
+            "2020oktu",
+            "***SUSPENDED*** Green Country Regional"
+        ],
+        [
+            "2020onham",
+            "***SUSPENDED*** ONT District McMaster University Event"
+        ],
+        [
+            "2020onlon",
+            "***SUSPENDED*** ONT District Western University, Western Engineering Event"
+        ],
+        [
+            "2020pncmp",
+            "***SUSPENDED*** Pacific Northwest FIRST District Championship"
+        ],
+        [
+            "2020wila",
+            "***SUSPENDED*** Seven Rivers Regional"
+        ]
+    ],
+    "Week7":[
+        [
+            "2020micmp",
+            "***SUSPENDED*** Michigan State Championship"
+        ],
+        [
+            "2020necmp",
+            "***SUSPENDED*** New England District Championship"
+        ],
+        [
+            "2020oncmp",
+            "***SUSPENDED*** FIRST Ontario Provincial Championship"
+        ],
+        [
+            "2020qcmo",
+            "***SUSPENDED*** Festival de Robotique a Montreal Regional"
+        ]
+    ],
+    "Week8":[
+
+    ],
+    "Week9":[
+
+    ],
+    "Week10":[
+        [
+            "2020award",
+            "2020 Award Winners"
+        ]
+    ],
+    "WeekNotListed":[
+        [
+            "2020cass",
+            "SCRRF SoCal Spring Scrimmage"
+        ],
+        [
+            "2020cmpmi",
+            "FIRST Championship (Detroit)"
+        ],
+        [
+            "2020cmptx",
+            "FIRST Championship (Houston)"
+        ],
+        [
+            "2020facc",
+            "FACC Ri3D Competition"
+        ],
+        [
+            "2020nyrra",
+            "Rochester Rally"
+        ],
+        [
+            "2020wiss",
+            "Sussex Mini-Regional"
+        ]
+    ]
+}

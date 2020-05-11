@@ -1,0 +1,310 @@
+<html>
+    <head>
+        <title>The Effects of COVID-19 on FIRST Robotics</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        <script type="text/javascript" src="teams_by_state.json"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>The Effects of COVID-19 on FIRST Robotics</h1>
+            <p style="margin: 25px 21vw 45px 21vw">
+                The 2020 FIRST Robotics Competition season has been a new experience for everyone involved. As a recent alumni 
+                of a FIRST Robotics team, I am thankful that I have not had to face the reality of building a robot
+                and possibly never seeing it play a match. As a former driver, I understand the advantages that come from
+                having additional field experience, and it is an unfortunate reality that we now have many teams on an uneven playing
+                field going in to whatever off-season or postponed FIRST events that may come. I have compiled all event data
+                for the Infinite Recharge season and hope to highlight some points that I found interesting that are hopefully 
+                useful and informative as well.
+
+            </p>
+            <div class="chart-container" style="width: 400px; height: 400px; margin-bottom: 160px">
+                <p class="disclaimer">Tip: hover or tap on a chart to see the underlying data</p>
+                <p style="font-size: 20px">FRC Events Scheduled for 2020</p>
+                <canvas id="eventSuspended" width="200" height="200"></canvas>
+                <p class="disclaimer">All data gathered from <a target="_blank" href="https://www.thebluealliance.com/apidocs">The Blue Alliance API</a></p>
+                <p class="disclaimer">View all event data by week <a target="_blank" href="event_display.json">here</a></p>
+            </div>
+            <p style="margin: 50px 21vw 0 21vw">
+                The figure above shows a 67.88% suspension rate for FRC events in the 2020 Season. There were
+                193 events scheduled for Infinite Recharge, sadly due to complications from COVID-19
+                only 62 events were conducted during weeks 1 and 2 of competition. These numbers may not be shocking 
+                considering how early into the season FIRST chose to suspend all events, but the data regarding 
+                the affected teams is much more interesting. Since the suspension of all events on 
+                <a href="https://www.firstinspires.org/covid-19">March 12</a>, many teams have been left in limbo 
+                regarding whether or not their robot will ever touch the gray carpet. It is unfortunate that
+                this is our situation, because the results of many teams' hard work was ultimately (and unknowingly) 
+                hinged upon the decision to compete before or after week 2. In this
+                article I hope to illustrate exactly how much damage has been dealt, and which teams have an
+                advantage going into off-season events (or possibly postponed FIRST sponsored events).
+            </p>
+            <div class="chart-container" style="width: 400px; height: 400px; margin: 40px 0 200px 0">
+                <p class="disclaimer">Disclaimer: The following data includes Week 0 events</a></p>
+                <p style="font-size: 20px">FRC Teams that have Attended an Event in 2020 Season</p>
+                <canvas id="teamsPlayed" width="200" height="200"></canvas>
+                <p class="disclaimer">All data gathered from <a target="_blank" href="https://www.thebluealliance.com/apidocs">The Blue Alliance API</a></p>
+                <p class="disclaimer">View all team data by events <a target="_blank" href="teams_by_events.json">here</a></p>
+            </div>
+            <p style="margin: 50px 21vw 0 21vw">
+                There are 3,912 teams registered to compete in Infinite Recharge. As the figure above shows, 1,847
+                teams were scheduled to attend an event at some point, but did not attend within the first two weeks
+                of competition. This is a staggering 47% of teams that have yet to play a single match of Infinite Recharge.
+                The difference between having one or two events worth of experience versus not playing at all
+                is a stark one, so it is important to know what we're up against in the coming months. 
+                What we can do now is take a look at the data and assess our situation from afar to gain some
+                insight on the regions most affected. Below is an input field that will generate a chart
+                similar to the figure above displaying the statistics for the state / province entered.
+                For example, entering 'Indiana' will display a figure of how many teams have and have not
+                attended an event in the state of Indiana. The search is not limited to the United States,
+                any state or province where there is at least one FRC team will provide data (e.g. 'Istanbul', or 'Québec').
+            </p>
+            <p style="font-size: 20px; margin: 50px 21vw -30px 21vw; display: flex; justify-content: center;">
+                Enter a state / province below to view participation statistics
+            </p>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Enter a state / province" onfocus="showDropdown()" onkeyup="fillDropdown(document.getElementById('search').value)" autocomplete="off"></input>
+                <div id="filter"></div>
+            </div>
+            <div id="display-cont" class="chart-container" style="width: 400px; height: 400px; margin: 80px 0 200px 0; display: none">
+                <p id="chartTitle" style="font-size: 20px; margin-top: -10px"></p>
+                <p id="displayDisclaimer" class="disclaimer">All data gathered from <a target="_blank" href="https://www.thebluealliance.com/apidocs">The Blue Alliance API</a></p>
+                <p class="disclaimer">View all state / province data by teams and events <a target="_blank" href="teams_by_state_and_events.json">here</a></p>
+            </div>
+            <p style="margin: 80px 21vw 0 21vw">
+                If you have tried searching for a state or province, you may have noticed that there are FRC
+                teams in parts of the world that you've never heard of before. This is one of the great
+                things about FIRST, unfortunately in this season it is not great for the teams themselves. 
+                Examining the data, we can see that remote areas relative to events (e.g. regions in Asia
+                 and Latin America, or in remote areas of the United States such Idaho or Wyoming)
+                have much lower attendance rates than teams who are closer in proximity to FIRST events. 
+                There are many factors that can contribute to a lack of attendance (distance, funding, etc.), but
+                I believe that most of this can be attributed to bad luck combined with how many events teams planned 
+                on travelling to in the first place.
+                In general, we see participation rates of either 0% or 100% in these areas (e.g. Morelos (2 teams, 100%), and Shanghai (15 teams, 0%)).
+                The issue of scheduling at the right time is a big one, accounting for most of the disparity in 
+                participation across the board. Those who decided to plan their travels for early in the season got 
+                to experience the game, but the unlucky few who scheduled later did not. Let's further examine the
+                teams that have participated by taking a look at the teams that have attended more than
+                one event.
+            </p>
+            <div class="chart-container" style="width: 400px; height: 400px; margin: 40px 0 200px 0">
+                <p style="font-size: 20px">FRC Teams that have Attended more than one Event in 2020 Season</p>
+                <canvas id="moreThan1" width="200" height="200"></canvas>
+                <p class="disclaimer">All data gathered from <a target="_blank" href="https://www.thebluealliance.com/apidocs">The Blue Alliance API</a></p>
+                <p class="disclaimer">See figures 1 and 2 for data sources</p>
+            </div>
+            <p style="margin: 50px 21vw 0 21vw">
+                As you can see from the data, there are very few teams that have attended greater than one event within this
+                3 week timeline (including week 0). 100 teams out of 2065 teams have attended more than one event, this is just 4.8% of teams that
+                have played, or 2.6% of all teams. I should clarify the phrase 'greater than one' because  
+                the maximum number of events attended out of all teams is two. It is important to distinguish whether either of
+                these two events are week zero events, since week zero events tend to be shorter or otherwise
+                not equivalent to other events. Out of the teams that have attended events, 44 attended one of 
+                the three week zero events, and
+                21 of those teams attended more than one event. In summary, out of all teams that have attended more
+                than one event (two events), 21% of them attended a week zero event and 79% did not. That leaves us with 2%
+                of all teams that have played two events, 53% of teams that have played at least one event, and 47% of teams
+                that haven't played at all. So where does this leave us? Well, we're still not any closer to playing, but I hope
+                that this data helps you in taking your next steps if you're part of those who haven't played. And if nothing
+                else, I hope you learned something. Stay safe, wash your hands, and most importantly keep building robots.
+            </p>
+            <p class="credit">Written by Aidan Walz, Team 5484 alumni - 2020</p>
+        </div>
+        <script>
+            function displayChart(state_prov) {
+                var searchBar = document.getElementById('search');
+                searchBar.value = state_prov;
+
+                // Load reigonal participation data
+                fetch('./region_competed.json')
+                    .then(res => res.json())
+                    .then(data => render(data, state_prov))
+                    .catch(err => console.error(err));
+
+                function render(regionData, state_prov) {
+                    if (document.getElementById('displayChart')) {
+                        document.getElementById('displayChart').remove();
+                    }
+
+                    var canvas = document.createElement('canvas');
+                    canvas.id = 'displayChart';
+                    canvas.width = '200';
+                    canvas.height = '200';
+                    var displayContainer = document.getElementById('display-cont');
+                    var displayDisclaimer = document.getElementById('displayDisclaimer');
+                    displayContainer.insertBefore(canvas, displayDisclaimer);
+
+                    attended = regionData[state_prov][1];
+                    did_not_attend = regionData[state_prov][0] - attended;
+                    if (did_not_attend < 0) {
+                        did_not_attend = 0;
+                    }
+
+                    var chartTitle = document.getElementById('chartTitle');
+                    chartTitle.textContent = state_prov + " FRC Teams that have Attended an Event in 2020 Season"
+                    
+
+                    var ctx = document.getElementById('displayChart').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Attended', 'Did not attend'],
+                            datasets: [{
+                                data: [attended, did_not_attend],
+                                backgroundColor: [
+                                    'rgba(255, 154, 81)',
+                                    'rgba(81, 133, 255)',
+                                ],
+                                borderColor: [
+                                    // 'rgba(255, 154, 81, 1)',
+                                    // 'rgba(81, 133, 255, 1)',
+                                ],
+                                borderWidth: 3
+                            }]
+                        },
+                        options: {
+                            
+                        }
+                    });
+                    displayContainer.style.display = 'block';
+                    hideDropdown();
+                }
+            }
+            
+            function getTerritoryNames() {
+                var keyList = [];
+                for (key in searchData) {
+                    keyList.push(key)
+                }
+                keyList.sort();
+                return keyList;
+            }
+            
+            function fillDropdown(query) {
+                var keys = getTerritoryNames();
+                var filter = document.getElementById('filter');
+                while(filter.firstChild) {
+                    filter.removeChild(filter.lastChild);
+                }
+                var similar = findSimilar(keys, query);
+                for (key in similar) {
+                    var a = document.createElement('a');
+                    var text = document.createTextNode(similar[key]);
+                    a.appendChild(text);
+                    a.href = "javascript:displayChart('" + text.textContent + "')";
+                    a.className = "list-item";
+                    filter.appendChild(a);
+                }
+                if (similar.length == 0) {
+                    filter.style.border = "none";
+                }
+                else {
+                    filter.style.border = "solid";
+                    filter.style.borderWidth = "1px";
+                    filter.style.borderColor = "grey";
+                    filter.style.height = 'auto';
+                }
+            }
+            
+            function hideDropdown() {
+                var filter = document.getElementById('filter');
+                filter.style.display = "none";
+            }
+            
+            function showDropdown() {
+                var filter = document.getElementById('filter');
+                filter.style.display = "flex";
+            }
+            
+            function findSimilar(list, query) {
+                output = [];
+                if (query.length > 0) {
+                    for (item in list) {
+                        portion = list[item].toLowerCase().slice(0, query.length);
+                        if (portion == query.toLowerCase()) {
+                            output.push(list[item]);
+                        }
+                    }
+                }
+                return output;
+            }
+            
+            var searchData = [];
+            // Load basic team / territory data
+            fetch('./teams_by_state.json')
+                .then(res => res.json())
+                .then(data => {searchData = data})
+                .catch(err => console.error(err));
+
+            var ctx = document.getElementById('eventSuspended').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Postponed', 'Completed'],
+                    datasets: [{
+                        data: [131, 62],
+                        backgroundColor: [
+                            'rgba(255, 99, 132)',
+                            'rgba(54, 162, 235)',
+                        ],
+                        borderColor: [
+                            // 'rgba(255, 99, 132, 1)',
+                            // 'rgba(54, 162, 235, 1)',
+                        ],
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    
+                }
+            });
+
+            var ctx = document.getElementById('teamsPlayed').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Attended', 'Did not attend'],
+                    datasets: [{
+                        data: [2065, 1847],
+                        backgroundColor: [
+                            'rgba(255, 175, 36)',
+                            'rgba(119, 41, 255)',
+                        ],
+                        borderColor: [
+                            
+                            // 'rgba(255, 175, 36, 1)',
+                            // 'rgba(119, 41, 255, 1)',
+                        ],
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    
+                }
+            });
+
+            var ctx = document.getElementById('moreThan1').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Attended 1', 'Attended > 1'],
+                    datasets: [{
+                        data: [1965, 100],
+                        backgroundColor: [
+                            'rgba(255, 117, 129)',
+                            'rgba(129, 255, 117)',
+                        ],
+                        borderColor: [
+                            // 'rgba(178, 255, 23)',
+                            // 'rgba(255, 23, 178)',
+                        ],
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    
+                }
+            });
+        </script>
+    </body>
+</html>
