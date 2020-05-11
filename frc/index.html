@@ -61,7 +61,7 @@
                 Enter a state / province below to view participation statistics
             </p>
             <div class="search-container">
-                <input type="text" id="search" placeholder="Enter a state / province" onfocus="showDropdown()" onkeyup="fillDropdown(document.getElementById('search').value)" autocomplete="off"></input>
+                <input type="text" id="search" placeholder="Enter a state / province" onkeyup="fillDropdown(document.getElementById('search').value)" autocomplete="off"></input>
                 <div id="filter"></div>
             </div>
             <div id="display-cont" class="chart-container" style="width: 400px; height: 400px; margin: 80px 0 200px 0; display: none">
@@ -202,6 +202,7 @@
                     filter.style.borderWidth = "1px";
                     filter.style.borderColor = "grey";
                     filter.style.height = 'auto';
+                    showDropdown();
                 }
             }
             
