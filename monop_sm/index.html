@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <title>
+        Monopoly Stock Market
+    </title>
+    <body>
+        <img class="logo" src="logo.png">
+        <div id="root" class="container"></div>
+    </body>
+    <script>
+
+        /*
+            -Trending (Mostly up over time, not random, still down trends)
+            -Four companies
+                -Randomly generated names / stock prices
+        */
+
+        // CONSTANTS
+        var MAX_PRICE = 500;
+        var MIN_PRICE = 100;
+        var COMPANIES = 4;
+
+        var names = [
+            "Park Place Holdings",
+            "Pacific Finacial",
+            "Baltic Bond Service",
+            "Marvin's Garden / Lawn Care",
+            "Boardwalk Bank",
+            "St. Charles Bakery",
+            "New York Nails",
+            "Kentucky Trucking Co."
+        ];
+
+        var usedNames = [];
+
+        function getStockPrice() {
+            var price = Math.floor((Math.random() * MAX_PRICE - MIN_PRICE) + MIN_PRICE);
+            if (price > MAX_PRICE) {
+                price = MAX_PRICE;
+            }
+            return price;
+        } 
+
+        function getName() {
+            for (var i = 0; i < names.length; i++) {
+                if (!usedNames.includes(names[i])) {
+                    usedNames.push(names[i]);
+                    return names[i];
+                }
+            }
+        }
+
+        function init() {
+            // INITIALIZE COMPANY CONTAINERS
+            for (var i = 0; i < COMPANIES; i++) {
+                var stock_div = document.createElement("div");
+                stock_div.className = "stock-container";
+
+                var company = document.createElement("div");
+                company.className = "company";
+                company.innerText = getName(); 
+
+                var price = document.createElement("div");
+                price.className = "price";
+                price.innerText = getStockPrice();
+
+                stock_div.appendChild(company);
+                stock_div.appendChild(price);
+                document.getElementById("root").appendChild(stock_div);
+            }
+        }
+        
+        init();
+    </script>
+</html>
