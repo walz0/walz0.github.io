@@ -7,6 +7,7 @@
     background-color: rgb(40, 42, 54);
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-y: hidden
   }
 
   .default {
