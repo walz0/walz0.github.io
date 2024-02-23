@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Walz Flooring</title>
+	</head>
+
+	<nav>
+		<!-- <div class="hamburger-button" onclick="toggleMenu()">
+			<i class="fa fa-bars"></i>
+		</div> -->
+		<a class="logo" href="index.html">Walz Flooring</a>
+		<!-- <div class="nav-links">
+			<a href="about.html">Flooring</a>
+			<a href="about.html">Wallcovering</a>
+			<a href="about.html">About</a>
+			<a href="contact.html">Contact</a>
+		</div> -->
+	</nav>
+
+	<body>
+		<!-- <div id="hamburger-menu">
+			<i class="fa fa-times" onclick="toggleMenu()"></i>	
+			<div><a href="about.html">Wallcovering</a></div>
+			<div><a href="about.html">Flooring</a></div>
+			<div><a href="contact.html">Contact</a></div>
+			<div><a href="about.html">About</a></div>
+		</div> -->
+		<main>
+			<!-- Intro -->
+			<div class="container" style="background: #000000; color: #ffffff">
+				<!-- The official website of Walz Flooring & Wallcovering! -->
+				<div class="title-container">
+					<div class="title">The highest quality flooring installation since 1997</div>
+					<!-- <div class="title">Walz Flooring</div> -->
+					<!-- <div class="subtitle">and Wallcovering</div> -->
+				</div>
+				<div class="showcase" style="background-image: url('img/stair_0.JPG')">
+				</div>
+
+				<!-- <h1 style="width: auto; padding: 0px;">The highest quality flooring installation since 1997</h1> -->
+				<!-- Testimonials ??? -->
+			</div>
+			
+
+			<!-- Gallery -->
+			<div class="container">
+				<h1>Showcase</h1>
+				<gallery>
+					<div class="img-container">
+						<div id="focus-image" style="background-image: url('img/stair_3.JPG')">
+							<div class="arrow-container">
+								<i class="fa fa-arrow-left gallery-arrow" 
+								onmouseover="hoverArrow(this)" 
+								onmouseout="leaveArrow(this)"
+								onmouseup="advanceGallery(-1)"
+								style="margin-left: 0; margin-right: auto"></i>
+								<i class="fa fa-arrow-right gallery-arrow" 
+								onmouseover="hoverArrow(this)"
+								onmouseout="leaveArrow(this)"
+								onmouseup="advanceGallery(1)"
+								style="margin-right: 0; margin-left: auto;"></i>
+							</div>
+						</div>
+					</div>
+					<div class="thumb-container">
+						<div class="thumb" style="background-image: url('img/stair_0.JPG')" onclick="selectImage(this)"></div>
+						<div class="thumb" style="background-image: url('img/stair_1.JPG')" onclick="selectImage(this)"></div>
+						<div class="thumb" style="background-image: url('img/tile_0.JPG')" onclick="selectImage(this)"></div>
+						<div class="thumb" style="background-image: url('img/stair_3.JPG')" onclick="selectImage(this)"></div>
+						<div class="thumb" style="background-image: url('img/stair_4.JPG')" onclick="selectImage(this)"></div>
+						<div class="thumb" style="background-image: url('img/laminate_0.JPG')" onclick="selectImage(this)"></div>
+						<div class="thumb" style="background-image: url('img/hardwood_0.JPG')" onclick="selectImage(this)"></div>
+						<div class="thumb" style="background-image: url('img/tile_1.JPG')" onclick="selectImage(this)"></div>
+						<div class="thumb" style="background-image: url('img/floor_0.JPG')" onclick="selectImage(this)"></div>
+					</div>
+				</gallery>
+			</div>
+
+			<!-- About -->
+			<h1>About</h1>
+			<div class="divider">
+				<img src="img/walz.png">
+				<div style="margin: 10px 75px 15px 75px; width: 25%; text-align: left; text-indent: 2vw;">
+					Joe Walz, owner of Walz Flooring, 
+					has over 25 years of experience in the industry and 
+					an outstanding record of service. He is committed to keeping
+					his customers satisfied, and will work with you one-on-one to 
+					determine exactly what's right for you. There is no project 
+					too big for Walz Flooring; we will give you a detailed timeline
+					of events and strive to exceed expectations.
+				</div>
+			</div>
+
+			<!-- Contact -->
+			<div class="container" style="border: none">
+				<div style="max-width: 80vw; margin-top: 25px">
+					<h2>Phone: 574-250-1938</h2>
+					<h2>Email: j.m.walz@sbcglobal.net</h2>
+				</div>
+				<div class="break"></div>
+			</div>
+			<!-- Email Form -->
+			<div class="container">
+				<h1 style="flex-basis: 100%">Contact</h1>
+				<form method="post" action="send_mail.php" class="contact-form">
+					<div class="first-last" style="width: 100%; display: flex; flex-wrap: nowrap;">
+						<input type="text" name="first_name" style="width: 49%" placeholder="First Name" required>
+						<input type="text" name="last_name" style="width: 49%; margin-left: 2%" placeholder="Last Name" required>
+					</div>
+					<input type="email" name="email_address" style="width: 100%" placeholder="Email" required>
+					<input type="phone" name="phone_number" style="width: 100%" placeholder="Phone" required>
+					<textarea name="comments" maxlength="500" placeholder="Comments" style="width: 100%; min-height: 60px"></textarea>
+					<button type="submit" class="button">Submit</button>
+				<div class="break"></div>
+				</form>
+			</div>
+			<div class="break"></div>
+			<div class="break"></div>
+		</main>
+	</body>
+
+	<footer></footer>
+
+	<script>
+		var open = true;
+		var gallery_slides = document.getElementsByClassName('thumb');
+
+		// Advances Gallery to next Image
+		function advanceGallery (dir) {
+			var focus_img = document.getElementById('focus-image');
+			var current = focus_img.style.backgroundImage;
+			for (var i = 0; i < gallery_slides.length; i++) {
+				var img = gallery_slides[i].style.backgroundImage;
+				if (current == img) {
+					// Image pos found, determine action
+					switch(dir) {
+						// RIGHT
+						case 1:
+							// If pos is not at the end
+							if (i < gallery_slides.length - 1) {
+								focus_img.style.backgroundImage = gallery_slides[i + 1].style.backgroundImage;
+							}
+							else {
+								focus_img.style.backgroundImage = gallery_slides[0].style.backgroundImage;
+							}
+							break;
+						// LEFT
+						case -1:
+							// If pos is not at the beginning 
+							if (i > 0) {
+								focus_img.style.backgroundImage = gallery_slides[i - 1].style.backgroundImage;
+							}
+							else {
+								focus_img.style.backgroundImage = gallery_slides[gallery_slides.length - 1].style.backgroundImage;
+							}
+							break;
+					}
+				}
+			}
+		}
+
+		// Focuses Gallery on selected image
+		function selectImage(element) {
+			var img_url = element.style.backgroundImage;
+			document.getElementById('focus-image').style.backgroundImage = img_url;
+		}
+
+		function hoverArrow(arrow) {
+			arrow.style.opacity = '0.85';
+			arrow.style.transition = '0.15s';
+		}
+
+		function leaveArrow(arrow) {
+			arrow.style.opacity = 0.6;
+		}
+
+		function toggleMenu () {
+			open = !open;
+			var menu = document.getElementById('hamburger-menu');
+			switch(open) {
+				case true:
+					menu.style.width = '0';
+					menu.style.display = 'none';
+					break;
+				case false:
+					menu.style.width = '75%';
+					menu.style.display = 'block';
+					break;
+			}
+		}
+
+		function goToUrl(url) {
+			window.location.href = url;
+		}
+	</script>
+
+</html>
